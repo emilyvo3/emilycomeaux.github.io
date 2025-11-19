@@ -1,35 +1,147 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style4.css">
 </head>
 
 <body>
     <video id="backgroundVideo" autoplay muted loop class="background-video">
-        <source src="2kpro.mp4" type="video/mp4">
+        <source src="../assets/video/2kpro.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
     <div id="mute-button-container">
-        <img id="sound-button" src="mute.png" alt="Mute/Unmute" style="cursor: pointer;">
+        <img id="sound-button" src="../assets/img/mute.png" alt="Mute/Unmute" style="cursor:pointer;">
     </div>
+
     <div class="rectangle-1">
-        <h1 class="emily-vo">Emily Vo</h1>
+        <h1 class="full-name">Emily Comeaux</h1>
         <div class="icons">
-            <img src="email.png" class="social-button email" onclick="clickEmail()" style="cursor: pointer;">
-            <img src="linkedIn.png" class="social-button linkedin" onclick="clickLinked()" style="cursor: pointer;">
-            <img src="github.png" class="social-button github" onclick="clickGithub()" style="cursor: pointer;">
-            <img src="insta.png" class="social-button instagram" onclick="clickInsta()" style="cursor: pointer;">
+            <img src="../assets/img/email.png" class="social-button email" onclick="clickEmail()"
+                style="cursor:pointer;">
+            <img src="../assets/img/linkedIn.png" class="social-button linkedin" onclick="clickLinked()"
+                style="cursor:pointer;">
+            <img src="../assets/img/github.png" class="social-button github" onclick="clickGithub()"
+                style="cursor:pointer;">
+            <img src="../assets/img/insta.png" class="social-button instagram" onclick="clickInsta()"
+                style="cursor:pointer;">
         </div>
     </div>
+
     <div class="links-bar"></div>
+
     <div class="rectangle-2">
-        <h1 class="portfolio">Portfolio</h1>
+        <h1 class="portfolio" id="portfolioTitle">Portfolio</h1>
         <div class="headingBar"></div>
-        <!-- Insert pdf -->
-        <p class="WIP">Work in progress...</p>
+
+        <!-- PROJECT LIST VIEW -->
+        <div id="project-list" class="projects-columns">
+            <div class="projects-column">
+                <h2 class="column-title">Smaller Builds</h2>
+
+                <button class="project-box" data-project="3d-obstacle">
+                    <h3 class="project-title">3D Obstacle Game</h3>
+                    <p class="project-desc"><br>A simple 3D runner where the player avoids obstacles.</p>
+                </button>
+
+                <button class="project-box" data-project="daily-quotes">
+                    <h3 class="project-title">Daily Quote Notifications</h3>
+                    <p class="project-desc"><br>Delivers motivational quotes to the desktop daily.</p>
+                </button>
+
+                <button class="project-box" data-project="color-picker">
+                    <h3 class="project-title">Color Picker</h3>
+                    <p class="project-desc"><br>Pick and copy colors quickly for design work.</p>
+                </button>
+            </div>
+
+            <div class="projects-column">
+                <h2 class="column-title">Major Projects</h2>
+
+                <button class="project-box" data-project="volverse">
+                    <h3 class="project-title">Volverse</h3>
+                    <p class="project-desc"><br>Full-stack Android app for tutor scheduling.</p>
+                </button>
+
+                <button class="project-box" data-project="work-hard-play-hard">
+                    <h3 class="project-title">Work Hard Play Hard</h3>
+                    <p class="project-desc"><br>Productivity site with gamification.</p>
+                </button>
+
+                <button class="project-box" data-project="credit-card-fraud">
+                    <h3 class="project-title">Credit Card Fraud Detection</h3>
+                    <p class="project-desc"><br>Classification analysis on card transactions.</p>
+                </button>
+
+                <button class="project-box" data-project="mental-health-text">
+                    <h3 class="project-title">Mental Health Text-Intervention</h3>
+                    <p class="project-desc"><br>Web content for UTK’s Center for Behavioral Health Research.</p>
+                </button>
+
+                <button class="project-box" data-project="genai">
+                    <h3 class="project-title">GenAI for Future Retail</h3>
+                    <p class="project-desc"><br>Full-stack Android app for grocery shopping using AI.</p>
+                </button>
+
+                <button class="project-box" data-project="partnerhq">
+                    <h3 class="project-title">PartnerHQ</h3>
+                    <p class="project-desc"><br>A portal connecting clients and financial professionals.</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- PROJECT DETAIL VIEW -->
+        <div id="project-detail" class="project-detail hidden">
+            <button id="back-to-list" class="back-btn" aria-label="Back to projects">← Back</button>
+
+            <h2 id="detail-title" class="detail-title">Project Title</h2>
+
+            <div class="detail-meta">
+                <span id="detail-type" class="badge">Type</span>
+                <span id="detail-role" class="badge">Role</span>
+                <span id="detail-stack" class="badge">Stack</span>
+            </div>
+
+            <div class="detail-sections">
+                <section>
+                    <h3>Overview</h3>
+                    <p id="detail-overview">Write a short overview of the project here.</p>
+                </section>
+
+                <section>
+                    <h3>Key Features</h3>
+                    <ul id="detail-features">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Links</h3>
+                    <p id="detail-links"></p>
+                </section>
+
+                <section>
+                    <h3>Images / Media</h3>
+                    <div id="detail-media" class="media-grid"></div>
+                </section>
+            </div>
+        </div>
     </div>
+
+    <!-- Lightbox for enlarged media -->
+    <div id="lightbox" class="lightbox hidden">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button id="lightbox-close" aria-label="Close image">&times;</button>
+            <img id="lightbox-img" src="" alt="Enlarged project image">
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

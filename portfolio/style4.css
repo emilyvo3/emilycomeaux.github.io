@@ -1,11 +1,8 @@
 body {
     width: 100%;
-    /* Full width of the viewport */
     padding: 0;
-    /* Add padding */
     background: #FFFFFF;
     margin: 0;
-    /* Remove default margin */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,18 +15,12 @@ body {
     border-radius: 6.66597px;
     margin-top: -20px;
     margin-bottom: 15px;
-
-    background: #B7A5A5;
-    border-radius: 6.66597px;
 }
-
 
 .rectangle-1 {
     box-sizing: border-box;
     display: flex;
-    /* Use inline-flex for proper alignment */
     justify-content: center;
-    /* Center text horizontally */
     align-items: center;
     margin: 0 auto;
     position: fixed;
@@ -42,78 +33,61 @@ body {
     z-index: 1;
 }
 
-h1.emily-vo {
-
+h1.full-name {
     position: absolute;
     box-sizing: border-box;
     display: inline-flex;
-    /* Use inline-flex for proper alignment */
     justify-content: center;
-
-
+    margin: 0 auto;
+    white-space: nowrap;
+    transform: translateX(20px);
     margin: 0 auto;
     width: 151px;
     height: 46px;
     left: 50px;
-    top: 17px;
-
+    top: 15px;
     font-family: 'Roboto Slab';
-    font-style: normal;
     font-weight: 400;
     font-size: 35px;
     line-height: 46px;
-
+    white-space: nowrap;
     color: #B7A5A5;
 }
 
 .rectangle-1 .icons {
     display: flex;
     gap: 20px;
-    /* Space between icons */
     position: absolute;
     right: 50px;
 }
 
-/* Rectangle 2 */
+/* Rectangle 2 — widened & responsive */
 .rectangle-2 {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 900px;
+    width: min(1200px, 92vw);
+    /* wider container */
     min-height: 100%;
     background: #020819;
-    padding: 20px;
+    padding: 28px 28px 36px;
     margin-top: 90px;
-    /* Adjust based on header height */
+    /* account for fixed header */
     border: 2px solid #B7A5A5;
     border-radius: 24px;
     opacity: 0.9;
 }
 
-/* Resume */
 .portfolio {
     font-family: 'Roboto Slab';
-    font-style: normal;
     font-weight: 400;
     font-size: 50px;
     line-height: 66px;
     text-align: center;
     color: #B7A5A5;
     margin: 20px 0;
-}
-
-.WIP {
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 37px;
-    color: #B7A5A5;
-    text-align: center;
-    margin: 20px 0;
-    width: 100%;
 }
 
 /* Links Bar */
@@ -151,30 +125,243 @@ h1.emily-vo {
 #sound-button {
     position: absolute;
     top: 90px;
-    /* Adjust as needed */
     left: 30px;
-    /* Adjust as needed */
     cursor: pointer;
-    /* Change the cursor on hover */
     width: 50px;
-    /* Set desired width */
     height: auto;
-    /* Maintain aspect ratio */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .aboutMe {
-        font-size: 30px;
-        line-height: 40px;
-    }
-
-    .WIP {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    .rectangle-2 {
-        width: 90%;
-    }
+/* Project Columns */
+.projects-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* two equal columns */
+    gap: 40px;
+    width: 100%;
+    margin-top: 20px;
 }
+
+.projects-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.column-title {
+    font-size: 28px;
+    font-family: 'Roboto Slab';
+    font-weight: 600;
+    color: #B7A5A5;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #B7A5A5;
+    padding-bottom: 5px;
+}
+
+/* Project card */
+.project-box {
+    border: 2px solid #B7A5A5;
+    border-radius: 12px;
+    padding: 20px;
+    background: rgba(183, 165, 165, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 180px;
+    box-sizing: border-box;
+    text-align: left;
+    cursor: pointer;
+    /* clickable */
+    transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    background: rgba(183, 165, 165, 0.09);
+}
+
+.project-box:focus {
+    outline: 3px solid #B7A5A5;
+}
+
+.project-title {
+    font-size: 24px;
+    font-family: 'Roboto Slab';
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #B7A5A5;
+    text-align: center;
+}
+
+.project-desc {
+    font-size: 18px;
+    font-family: 'Roboto Slab';
+    color: #B7A5A5;
+    text-align: center;
+    margin: 0;
+}
+
+.project-detail {
+    width: 100%;
+    position: relative;
+    padding-top: 60px;
+    /* back button will be relative to this */
+}
+
+.hidden {
+    display: none;
+}
+
+.back-btn {
+    position: absolute;
+    /* take it out of the flow */
+    top: -100px;
+    /* move it close to the top */
+    left: 5px;
+    /* hug the left edge */
+    background: transparent;
+    border: 2px solid #B7A5A5;
+    color: #B7A5A5;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-family: 'Roboto Slab';
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .12s ease;
+    z-index: 5;
+    /* keep above other content */
+}
+
+.back-btn:hover {
+    background: rgba(183, 165, 165, 0.12);
+}
+
+.detail-title {
+    font-family: 'Roboto Slab';
+    color: #B7A5A5;
+    font-size: 36px;
+    margin: 8px 0 6px;
+    text-align: center;
+}
+
+.detail-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1px 0 20px;
+}
+
+.badge {
+    border: 1px solid #B7A5A5;
+    color: #B7A5A5;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.detail-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.detail-sections h3 {
+    color: #B7A5A5;
+    font-family: 'Roboto Slab';
+    margin: 0 0 6px;
+}
+
+.detail-sections p,
+.detail-sections li,
+.detail-sections a {
+    color: #B7A5A5;
+    font-family: 'Roboto Slab';
+    line-height: 1.5;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 10px;
+    border: 2px dashed #B7A5A5;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 160px;
+    /* “drop zone” feel for later */
+}
+
+/* Make media thumbnails feel clickable */
+.media-grid img {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.media-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Lightbox overlay */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox.hidden {
+    display: none;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Close button */
+#lightbox-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    border: 2px solid #B7A5A5;
+    background: #020819;
+    color: #B7A5A5;
+    border-radius: 999px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+    .projects-columns {
+        grid-template-columns: 1fr;
+        /* single column on small screens */
+    }
+    .detail-sections {
+        grid-template-columns: 1fr;
+        /* single column on small screens */
+    }
+}   

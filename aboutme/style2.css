@@ -24,16 +24,18 @@ body {
     z-index: 1;
 }
 
-h1.emily-vo {
+h1.emily-comeaux {
     position: absolute;
     box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
+    white-space: nowrap;
+    transform: translateX(20px);
     margin: 0 auto;
     width: 151px;
     height: 46px;
     left: 50px;
-    top: 17px;
+    top: 15px;
     font-family: 'Roboto Slab';
     font-style: normal;
     font-weight: 400;
@@ -86,6 +88,7 @@ h1.emily-vo {
     overflow: hidden;
     overflow-y: scroll;
 }
+
 
 .rectangle-3 {
     box-sizing: border-box;

@@ -1,35 +1,42 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Resume</title>
     <link rel="stylesheet" href="style3.css">
 </head>
 
 <body>
-<video id="backgroundVideo" autoplay muted loop class="background-video">
-    <source src="2kpro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<div id="mute-button-container">
-    <img id="sound-button" src="mute.png" alt="Mute/Unmute" style="cursor: pointer;">
-</div>
+    <video id="backgroundVideo" autoplay muted loop class="background-video">
+        <source src="../assets/video/2kpro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="mute-button-container">
+        <img id="sound-button" src="../assets/img/mute.png" alt="Mute/Unmute" style="cursor: pointer;">
+    </div>
+
     <div class="rectangle-1">
-        <h1 class="emily-vo">Emily Vo</h1>
+        <h1 class="emily-comeaux">Emily Comeaux</h1>
         <div class="icons">
-            <img src="email.png" class="social-button email" onclick="clickEmail()">
-            <img src="linkedIn.png" class="social-button linkedin" onclick="clickLinked()">
-            <img src="github.png" class="social-button github" onclick="clickGithub()">
-            <img src="insta.png" class="social-button instagram" onclick="clickInsta()">
+            <img src="../assets/img/email.png" class="social-button email" onclick="clickEmail()">
+            <img src="../assets/img/linkedIn.png" class="social-button linkedin" onclick="clickLinked()">
+            <img src="../assets/img/github.png" class="social-button github" onclick="clickGithub()">
+            <img src="../assets/img/insta.png" class="social-button instagram" onclick="clickInsta()">
         </div>
     </div>
+
     <div class="links-bar"></div>
+
     <div class="rectangle-2">
         <h1 class="resume">Resume</h1>
         <div class="headingBar"></div>
-        <!-- Insert pdf -->
-        <embed src="Emily Vo's Resume.pdf" type="application/pdf" width="100%" height="1000px" />
+
+        <!-- PDF is inside resume/ so this path is correct -->
+        <embed src="Emily Comeaux's Resume.pdf" type="application/pdf" width="100%" height="1000px" />
     </div>
+
     <script src="script.js"></script>
 </body>
 

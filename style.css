@@ -12,6 +12,16 @@ body {
     align-items: center;
 }
 
+/* Links Bar */
+.links-bar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 75px;
+    background: #B7A5A5;
+    border-radius: 6.66597px;
+}
+
 /* Rectangle 1 */
 .rectangle-1 {
     box-sizing: border-box;
@@ -28,6 +38,7 @@ body {
     top: 0%;
     background: #020819;
     opacity: 0.9;
+    z-index: 1;
 }
 
 /* Container for Rectangle 2 and Buttons */
@@ -37,6 +48,13 @@ body {
     align-items: center;
     margin-top: 30px;
     /* Adjust as needed */
+}
+
+.rectangle-1 .icons {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 50px;
 }
 
 /* Rectangle 2 */
@@ -76,28 +94,25 @@ body {
     color: #B7A5A5;
 }
 
-/* Emily Vo */
-h1.emily-vo {
-
+/* Emily Comeaux */
+h1.emily-comeaux {
     position: absolute;
     box-sizing: border-box;
     display: inline-flex;
-    /* Use inline-flex for proper alignment */
     justify-content: center;
-
-
+    margin: 0 auto;
+    white-space: nowrap;
+    transform: translateX(20px);
     margin: 0 auto;
     width: 151px;
     height: 46px;
     left: 50px;
-    top: 17px;
-
+    top: 15px;
     font-family: 'Roboto Slab';
-    font-style: normal;
     font-weight: 400;
     font-size: 35px;
     line-height: 46px;
-
+    white-space: nowrap;
     color: #B7A5A5;
 }
 
@@ -148,8 +163,6 @@ h1.emily-vo {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
-
 }
 
 /* Button Positions */
@@ -184,34 +197,9 @@ h1.emily-vo {
 
 /* Social Media Buttons */
 .social-button {
-    position: absolute;
+    cursor: pointer;
     width: 48.26px;
     height: 48.26px;
-}
-
-.instagram {
-
-    right: 50px;
-    top: 16px;
-    background: url(insta);
-}
-
-.linkedin {
-    right: 130px;
-    top: 16px;
-    background: url(linkedIn);
-}
-
-.email {
-    right: 210px;
-    top: 16px;
-    background: url(email);
-}
-
-.github {
-    right: 290px;
-    top: 16px;
-    background: url(github);
 }
 
 @media (max-width: 768px) {
@@ -246,6 +234,11 @@ h1.emily-vo {
     /* Places the video behind other content */
 }
 
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
 #sound-button {
     position: absolute;
     top: 90px;
@@ -258,4 +251,12 @@ h1.emily-vo {
     /* Set desired width */
     height: auto;
     /* Maintain aspect ratio */
+}
+
+@media (max-width: 900px) {
+    #sound-button {
+        top: 70px;
+        left: 20px;
+        width: 40px;
+    }
 }

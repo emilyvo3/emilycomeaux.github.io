@@ -32,9 +32,9 @@ const soundButton = document.getElementById('sound-button');
 soundButton.addEventListener('click', function() {
     if (backgroundVideo.muted) {
         backgroundVideo.muted = false; // Unmute
-        soundButton.src = 'unmute.png'; // Change to unmute image
+        soundButton.src = '../assets/img/unmute.png'; // Change to unmute image
     } else {
         backgroundVideo.muted = true; // Mute
-        soundButton.src = 'mute.png'; // Change to mute image
+        soundButton.src = '../assets/img/mute.png'; // Change to mute image
     }
 });

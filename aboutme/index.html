@@ -1,47 +1,58 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>About Me</title>
     <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
     <video id="backgroundVideo" autoplay muted loop class="background-video">
-        <source src="2kpro.mp4" type="video/mp4">
+        <source src="../assets/video/2kpro.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
     <div id="mute-button-container">
-        <img id="sound-button" src="mute.png" alt="Mute/Unmute" style="cursor: pointer;">
+        <img id="sound-button" src="../assets/img/mute.png" alt="Mute/Unmute" style="cursor: pointer;">
     </div>
+
     <div class="rectangle-1">
-        <h1 class="emily-vo">Emily Vo</h1>
+        <h1 class="emily-comeaux">Emily Comeaux</h1>
         <div class="icons">
-            <img src="email.png" class="social-button email" onclick="clickEmail()" style="cursor: pointer;">
-            <img src="linkedIn.png" class="social-button linkedin" onclick="clickLinked()" style="cursor: pointer;">
-            <img src="github.png" class="social-button github" onclick="clickGithub()" style="cursor: pointer;">
-            <img src="insta.png" class="social-button instagram" onclick="clickInsta()" style="cursor: pointer;">
+            <img src="../assets/img/email.png" class="social-button email" onclick="clickEmail()" style="cursor: pointer;">
+            <img src="../assets/img/linkedIn.png" class="social-button linkedin" onclick="clickLinked()" style="cursor: pointer;">
+            <img src="../assets/img/github.png" class="social-button github" onclick="clickGithub()" style="cursor: pointer;">
+            <img src="../assets/img/insta.png" class="social-button instagram" onclick="clickInsta()" style="cursor: pointer;">
         </div>
     </div>
+
     <div class="links-bar"></div>
+
     <div class="main-content">
         <div class="rectangle-2">
             <h1 class="aboutMe">About Me</h1>
             <div class="headingBar"></div>
-            <p class="intro">Hi! I’m Emily Vo, studying Computer Science at the University of Tennessee, Knoxville.
+            <p class="intro">
+                Hi! I’m Emily Comeaux, studying Computer Science at the University of Tennessee, Knoxville.
                 Afterwards, I will participate in the 5-Year MS/BS Program in Computer Science with a concentration in
                 Software Engineering in 2026.
                 I am also an undergraduate research assistant with the focus of Mental Health Text Intervention in
-                Software Development and Phishing in Cybersecurity.<br>
-                <br>My main goal in Computer Science is to make an impact on the projects I do. Whether big or small, I hope
-                my projects, solo or with a team, can help ease the challenges people face in their daily lives. I aim to integrate
-                creativity into technology, creating solutions that are not only functional but also intuitive and accessible.
+                Software Development and Phishing in Cybersecurity.<br><br>
+                My main goal in Computer Science is to make an impact on the projects I do. Whether big or small, I hope
+                my projects, solo or with a team, can help ease the challenges people face in their daily lives. I aim
+                to integrate
+                creativity into technology, creating solutions that are not only functional but also intuitive and
+                accessible.
             </p>
         </div>
+
         <div class="rectangle-3">
-        <img src="emily.png" class="emily-photo" alt="Photo of Emily (me)">
+            <!-- emily.png lives in aboutme/, so this path is fine -->
+            <img src="emily.png" class="emily-photo" alt="Photo of Emily (me)">
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 
